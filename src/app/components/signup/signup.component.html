@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="panel-heading">
+      <div class="panel-title text-center">
+        <h1 class="title">Signup Form</h1>
+      </div>
+    </div>
+    <div class="main-center">
+      <form class="form-horizontal" #signupForm="ngForm" (submit)="signup(signupForm.valid, signupForm.value)" novalidate>
+        <!--<div class="form-group" [ngClass]="{ 'has-error': registerForm.submitted && username.invalid }">
+          <input type="text" name="username" #username="ngModel"  class="form-control" placeholder="Username" ngModel required>
+          <div *ngIf="registerForm.submitted && username.invalid" class="help-block">Username is required</div>
+        </div>-->
+        <div class="form-group" [ngClass]="{ 'has-error': signupForm.submitted && username.invalid }">
+          <label for="username" class="cols-sm-2 control-label">Username</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" id="username" name="username" #username="ngModel" class="form-control" placeholder="Enter your Username" required ngModel/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': signupForm.submitted && email.invalid  }">
+          <label for="email" class="cols-sm-2 control-label">Your Email</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+              <input type="email" id="email" name="email" #email="ngModel" class="form-control"  placeholder="Enter your Email"  required ngModel/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': signupForm.submitted && password.invalid  }">
+          <label for="password" class="cols-sm-2 control-label">Password</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+              <input type="password" id="password" name="password" #password="ngModel" class="form-control" placeholder="Enter your Password" required ngModel/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group ">
+          <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Signup</button>
+        </div>
+        <div class="login-register">
+          <p>Do you have an account?</p>
+          <a [routerLink]="['/login']">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

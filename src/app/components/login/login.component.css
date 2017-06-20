@@ -1,0 +1,11 @@
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+  padding: 40px 40px;
+  background-color: #1b6d85;
+}
+.login-register{
+  font-size: 15px;
+  text-align: center;
+}
